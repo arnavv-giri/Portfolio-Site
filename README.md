@@ -1,22 +1,6 @@
-# A Nest Level Portfolio 🚀
+# Arnav Giri — Portfolio 🚀
 
-[![Stars](https://img.shields.io/github/stars/dnuzi/Portfolio-Site?style=social)](https://github.com/dnuzi/Portfolio-Site/stargazers) [![Forks](https://img.shields.io/github/forks/dnuzi/Portfolio-Site?style=social)](https://github.com/dnuzi/Portfolio-Site/network/members) [![License](https://img.shields.io/github/license/dnuzi/Portfolio-Site)](https://github.com/dnuzi/Portfolio-Site/blob/main/LICENSE) [![Vercel Deploy](https://img.shields.io/badge/Deploy-Vercel-brightgreen)](https://vercel.com/new/git/external?repository-url=https://github.com/dnuzi/Portfolio-Site)
-
-A sleek, **full-stack creative portfolio template** built with modern tools like **Vite**, **Tailwind CSS**, **GSAP**, and **Lenis** for buttery-smooth animations. Inspired by the misty hills of Sri Lanka, it blends tranquility with cutting-edge code. Perfect for developers, designers, and creators who want to stand out. **100% free, open-source, and customizable** – deploy in minutes!
-
-<div align="center">
-
-### 📸 Site Preview
-
-![Portfolio Preview Screenshot](https://github.com/dnuzi/mova-npm-media/blob/main/Screenshot%202026-01-21%20194857.png)
-<em>*(Full-site preview: Hero, works, skills, and chronometer in action. Replace with your actual screenshot for live vibes!)*</em>
-
-</div>
-
-<div align="center">
-  <img src="https://github.com/dnuzi/mova-npm-media/blob/main/movanest.gif" alt="Hero Animation" width="100%" />
-  <p><em>Live Demo: <a href="https://portfolio-site-rosy-nine.vercel.app/"></a>portfolio-site-rosy-nine.vercel.app</em></p>
-</div>
+A sleek, **full-stack developer portfolio** built with modern tools like **Vite**, **Tailwind CSS**, **GSAP**, and **Lenis** for buttery-smooth animations. Built by Arnav Giri, Full Stack Developer specialising in Java, Spring Boot, React, and PostgreSQL.
 
 ## ✨ Features
 
@@ -46,42 +30,34 @@ A sleek, **full-stack creative portfolio template** built with modern tools like
 - Git
 
 ### Installation
-1. **Clone the Repo**:
-   ```bash
-   git clone https://github.com/dnuzi/Portfolio-Site.git
-   cd danuzz-portfolio
-   ```
-
-2. **Install Dependencies**:
+1. **Install Dependencies**:
    ```bash
    npm install
    ```
 
-3. **Development Server**:
+2. **Development Server**:
    ```bash
    npm run dev
    ```
-   Open [http://localhost:5173](http://localhost:5173) – watch the magic unfold!
+   Open [http://localhost:5173](http://localhost:5173)
 
-4. **Build for Production**:
+3. **Build for Production**:
    ```bash
    npm run build
    ```
    Outputs a single `dist/index.html` (obfuscated & minified).
 
-5. **Preview Build**:
+4. **Preview Build**:
    ```bash
    npm run preview
    ```
 
 ### Customization
-- **Images**: Swap files in `/public/` (e.g., `kelum-viduranga-portrait.jpg` for hero).
+- **Images**: Swap files in `/public/` (e.g., `arnav-giri.jpeg` for hero).
 - **Content**: Edit `index.html` sections (hero text, work cards, skills list).
 - **Colors/Themes**: Tweak `--bg-color`, `--text-main` in `src/main.css`.
 - **Animations**: Adjust GSAP timelines in `src/main.js`.
 - **Add Projects**: Duplicate work cards in HTML; update `src` paths.
-
-For a full guide, see [CUSTOMIZATION.md](CUSTOMIZATION.md) (create if needed).
 
 ## ☁️ Deployment
 
@@ -110,29 +86,10 @@ For a full guide, see [CUSTOMIZATION.md](CUSTOMIZATION.md) (create if needed).
 - **Fonts**: Inter & Space Mono (Google Fonts).
 - **CDNs**: Minimal – GSAP/Lenis for speed.
 
-## 🤝 Contributing
-
-Love it? Fork, tweak, and PR! Ideas for features like dark mode or React integration? Open an issue.
-
-1. Fork the repo.
-2. Create your branch (`git checkout -b feature/awesome`).
-3. Commit (`git commit -m 'Add awesome feature'`).
-4. Push (`git push origin feature/awesome`).
-5. Open a Pull Request.
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
-
 ## 📄 License
 
-This project is [MIT](LICENSE) licensed – use it freely, even commercially. Built with ❤️ from the sunny shores of Sri Lanka (Negombo vibes!).
-
-<div align="center">
-  <img src="https://github.com/dnuzi/mova-npm-media/blob/main/mova.gif" alt="Hero Animation" width="100%" />
-</div>
+This project is [MIT](LICENSE) licensed – use it freely, even commercially.
 
 ---
 
-**Made by [Danu'Zz & Kelum'Xz](https://github.com/dnuzi) – Full-Stack Creative from Sri Lanka.**  
-*January 2026 Edition* | [YouTube](https://www.youtube.com/@MovaNest) | [MainSite](https://www.movanest.xyz)  
-
-> "Code like a hill country breeze – calm, yet unstoppable." 🌿💻
+**Arnav Giri** — Full Stack Developer | [GitHub](https://github.com/arnavv-giri) | [LinkedIn](https://www.linkedin.com/in/arnav-giri-2498101b9/) | [LeetCode](https://leetcode.com/u/arnav_giri/)

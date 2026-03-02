@@ -16,10 +16,10 @@
     "vite-plugin-javascript-obfuscator": "^3.1.0",
     "vite-plugin-singlefile": "^2.3.0"
   },
-  "description": "A free, open-source portfolio template built with Vite, Tailwind CSS, GSAP, and JS obfuscation for single-file deployment.",
+  "description": "Portfolio of Arnav Giri, Full Stack Developer specializing in Java, Spring Boot, React, and PostgreSQL.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dnuzi/Portfolio-Site.git"
+    "url": "https://github.com/arnavv-giri/portfolio.git"
   },
   "license": "MIT",
   "keywords": [

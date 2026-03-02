@@ -158,6 +158,12 @@ body {
     will-change: transform;
 }
 
+/* Text stroke for hero name outline variant */
+.text-stroke {
+    -webkit-text-stroke: 2px #111111;
+    color: transparent;
+}
+
 /* Custom Tailwind Animations */
 @layer utilities {
     .animate-spin-slow { animation: spin 20s linear infinite; }

@@ -102,13 +102,41 @@ window.addEventListener("load", () => {
         duration: 1.2,
         ease: "power3.out"
     }, "-=1.0")
-    // Typewriter start
+    // Typewriter start — cycle through roles
     .add(() => {
-        gsap.to('#typewriter', {
-            text: "Coding | UX UI | Graphic Design",
-            duration: 3,
-            ease: "none"
-        });
+        const roles = [
+            "Full Stack Developer (Spring Boot & React)",
+            "Backend Developer (Java, Spring Boot, REST APIs)",
+            "Software Engineer",
+            "DSA & Problem Solving Enthusiast",
+            "Problem Solver"
+        ];
+        let roleIndex = 0;
+        const el = document.getElementById('typewriter');
+        function typeRole() {
+            if (!el) return;
+            const role = roles[roleIndex % roles.length];
+            gsap.to(el, {
+                text: role,
+                duration: role.length * 0.045,
+                ease: "none",
+                onComplete: () => {
+                    // Pause, then erase, then type next
+                    setTimeout(() => {
+                        gsap.to(el, {
+                            text: "",
+                            duration: 0.6,
+                            ease: "none",
+                            onComplete: () => {
+                                roleIndex++;
+                                typeRole();
+                            }
+                        });
+                    }, 2200);
+                }
+            });
+        }
+        typeRole();
     }, "-=0.5");
 });
 // Backup timeout in case window.load fails (e.g., slow image)
@@ -156,6 +184,17 @@ mapTl.from("#map-container", { scale: 0.8, opacity: 0, duration: 0.8, ease: "bac
      .to("#map-pin", { y: 0, opacity: 1, duration: 0.5, ease: "bounce.out" }, "-=0.3");
 
 // 7. General Reveal Animations (Bi-directional)
+gsap.utils.toArray('[data-gsap="scale-in"]').forEach(el => {
+    gsap.from(el, {
+        scrollTrigger: {
+            trigger: el,
+            start: "top 80%",
+            end: "bottom top",
+            toggleActions: "play reverse play reverse"
+        },
+        scale: 0.85, opacity: 0, duration: 0.9, ease: "power3.out"
+    });
+});
 gsap.utils.toArray('[data-gsap="fade"]').forEach(el => {
     gsap.from(el, {
         scrollTrigger: {
@@ -179,10 +218,10 @@ gsap.utils.toArray('[data-gsap="slide-up"]').forEach(el => {
     });
 });
 
-// 8. Age & Stats Calculator
-function updateTimeBasedStats() {
-    const birthDate = new Date('2008-06-10T11:10:00');
-    const careerStartDate = new Date('2019-06-10T00:00:00'); // Assuming started around age 11
+// 8. Age Chronometer — DOB: 24 December 2004
+function updateChronometer() {
+    // Exact birthdate: 24 Dec 2004, midnight IST (UTC+5:30)
+    const birthDate = new Date('2004-12-24T00:00:00+05:30');
     const now = new Date();
     // --- AGE CALCULATION ---
     let years = now.getFullYear() - birthDate.getFullYear();
@@ -201,43 +240,24 @@ function updateTimeBasedStats() {
     }
     if(months < 0) { months += 12; years--; }
     const els = {
-        years: document.getElementById('years'),
-        months: document.getElementById('months'),
-        days: document.getElementById('days'),
-        hours: document.getElementById('hours'),
+        years:   document.getElementById('years'),
+        months:  document.getElementById('months'),
+        days:    document.getElementById('days'),
+        hours:   document.getElementById('hours'),
         minutes: document.getElementById('minutes'),
         seconds: document.getElementById('seconds'),
-        secBar: document.getElementById('sec-bar')
+        secBar:  document.getElementById('sec-bar')
     };
-    if(els.years) els.years.innerText = String(years).padStart(2, '0');
-    if(els.months) els.months.innerText = String(months).padStart(2, '0');
-    if(els.days) els.days.innerText = String(days).padStart(2, '0');
-    if(els.hours) els.hours.innerText = String(hours).padStart(2, '0');
+    if(els.years)   els.years.innerText   = String(years).padStart(2, '0');
+    if(els.months)  els.months.innerText  = String(months).padStart(2, '0');
+    if(els.days)    els.days.innerText    = String(days).padStart(2, '0');
+    if(els.hours)   els.hours.innerText   = String(hours).padStart(2, '0');
     if(els.minutes) els.minutes.innerText = String(minutes).padStart(2, '0');
     if(els.seconds) els.seconds.innerText = String(seconds).padStart(2, '0');
-    if(els.secBar) {
-        const secPercent = (seconds / 60) * 100;
-        els.secBar.style.width = `${secPercent}%`;
-    }
-    // --- CAREER STATS CALCULATION ---
-    // Calculate Experience
-    let expYears = now.getFullYear() - careerStartDate.getFullYear();
-    let expMonths = now.getMonth() - careerStartDate.getMonth();
-    if (expMonths < 0) {
-        expYears--;
-        expMonths += 12;
-    }
-    // Format experience (e.g., 5+)
-    const expEl = document.getElementById('dynamic-exp');
-    if(expEl) expEl.innerText = `${expYears}+`;
-    // Calculate Projects (Approximate rate: 1.5 projects per month since start)
-    const totalMonthsSinceStart = (expYears * 12) + expMonths;
-    const estimatedProjects = Math.floor(totalMonthsSinceStart * 1.5) + 20; // +20 base
-    const projEl = document.getElementById('dynamic-projects');
-    if(projEl) projEl.innerText = `${estimatedProjects}+`;
+    if(els.secBar)  els.secBar.style.width = `${(seconds / 60) * 100}%`;
 }
-setInterval(updateTimeBasedStats, 1000);
-updateTimeBasedStats();
+setInterval(updateChronometer, 1000);
+updateChronometer();
 
 // 9. Horizontal Scroll (Advanced - Bug Fixes)
 const worksWrapper = document.querySelector("#works-wrapper");
